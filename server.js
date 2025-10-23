@@ -15,6 +15,13 @@ app.get('/status', (req, res) => {
   });
 });
 
+res.send({
+    status: 'ok',
+    environment: process.env.APP_VERSION || 'UNKNOWN',
+    message: 'API Version: Deployment Candidate V1.1 is ready!' 
+    // Previous message was 'API Version: BLUE is active.'
+  });
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT} with version ${VERSION}`);
 });
